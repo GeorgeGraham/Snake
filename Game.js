@@ -33,7 +33,7 @@ function Game(){// defines the game
 
 		let snake = this.entities[0];
 
-		if(this.time%5==0){
+		if(this.time%50==0){
 			snake.update_body();
 		}
 		

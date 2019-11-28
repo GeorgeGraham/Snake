@@ -47,9 +47,6 @@ function Snake(){
 
 		// TEST
 		let p3 = new Part(100,120,10,10);
-		let p4 = new Part(100,130,10,10);
-		let p5 = new Part(100,140,10,10);
-		let p6 = new Part(100,150,10,10);
 
 
 		this.parts.push(p1);
