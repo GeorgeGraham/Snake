@@ -4,7 +4,7 @@
 
 
 
-
+//COLLISSION
 
 function Detector(){
 	this.is_colliding = function(A,B){
