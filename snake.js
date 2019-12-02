@@ -62,16 +62,16 @@ function Snake(){
 	}
 	this.move = function(event){
 		console.log("Move");
-		if(event.code=="KeyS"){
+		if(event.code=="KeyS"|| event.code == 83){
 			this.direction="down";
 		}
-		if(event.code=="KeyA"){
+		if(event.code=="KeyA"|| event.code == 65){
 			this.direction="left";
 		}
-		if(event.code=="KeyD"){
+		if(event.code=="KeyD"|| event.code == 68){
 			this.direction="right";
 		}
-		if(event.code=="KeyW"){
+		if(event.code=="KeyW"|| event.code == 87){
 			this.direction="up";
 		}
 	}
