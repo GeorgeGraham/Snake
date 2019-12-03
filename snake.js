@@ -52,9 +52,7 @@ function Snake(){
 		this.parts.push(p1);
 		this.parts.push(p2);
 		this.parts.push(p3);
-		this.parts.push(p4);
-		this.parts.push(p5);
-		this.parts.push(p6);
+		
 
 	}
 	this.move = function(event){

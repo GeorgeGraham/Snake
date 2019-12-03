@@ -17,8 +17,8 @@ function Game(){// defines the game
 	this.start = function(){
 		
 
-		let foodgenenerator = new Foodgen();
-
+		
+		console.log(food);
 		//INITIATE SNAKE OBJECT , ADD TO GAME
 		let s = new Snake();
 		s.initiate();
@@ -36,15 +36,15 @@ function Game(){// defines the game
 
 		let snake = this.entities[0];
 
-		if(this.time%50==0){
+		if(this.time%5==0){
 			snake.update_body();
 		}
 		
-		foodgenerator.foodgen();
+		food.generate();
 
-		if(d.colliding(snake.parts[0],snake.parts[3])==true){
-			alert("collission");
-		}
+		//if(d.colliding(snake.parts[0],snake.parts[3])==true){
+		//	alert("collission");
+		//}
 
 
 		renderer.render(snake);

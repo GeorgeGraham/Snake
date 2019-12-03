@@ -16,13 +16,14 @@ function Food(ix,iy){
 function Foodgen(){
 	this.generate = function(){
 		
+		//RANDOMLY PLACE FOOD IN CANVAS
 
-		console.log((Math.random()*10)+1);
+		let x = Math.floor((Math.random()*canvas.width-1)-1);
+		let y = Math.floor((Math.random()*canvas.height-1)-1);
+		let f = new Food(x,y);
 
-		//let f = new Food();
+		game.entities.push(f);
 
-		//game.entities.push(f);
-
-
+		//console.log(game.entities);
 	}
 }
