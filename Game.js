@@ -47,10 +47,16 @@ function Game(){// defines the game
 		//}
 
 
-		renderer.render(snake);
-
-
 		
+
+		console.log (this.entities.length);
+
+		for(x=1;x<=this.entities.length-1;x++){
+			renderer.draw_rect(this.entities[x]);
+			// RENDER ALL FOOD
+		}
+
+		renderer.render(snake);
 
 
 		window.requestAnimationFrame(this.update.bind(this));
