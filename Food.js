@@ -15,6 +15,14 @@ function Food(ix,iy){
 
 function Foodgen(){
 	this.generate = function(){
-		console.log(Math.random());
+		
+
+		console.log((Math.random()*10)+1);
+
+		//let f = new Food();
+
+		//game.entities.push(f);
+
+
 	}
 }
