@@ -41,7 +41,7 @@ function Game(){// defines the game
 		if(this.time%5==0){
 			snake.update_body();
 		}
-		if(this.time%30==0){
+		if(this.time%5==0){
 			food.generate();
 		}
 		
