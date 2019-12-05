@@ -47,17 +47,12 @@ function Snake(){
 
 		// TEST
 		let p3 = new Part(100,120,10,10);
-		let p4 = new Part(100,130,10,10);
-		let p5 = new Part(100,140,10,10);
-		let p6 = new Part(100,150,10,10);
 
 
 		this.parts.push(p1);
 		this.parts.push(p2);
 		this.parts.push(p3);
-		this.parts.push(p4);
-		this.parts.push(p5);
-		this.parts.push(p6);
+		
 
 	}
 	this.move = function(event){
@@ -96,8 +91,9 @@ function Snake(){
 			infront.lx = infront.x;
 			infront.ly = infront.y;
 
-			console.log(current.lx);
-			console.log(infront.lx);
+			//console.log(current.lx);
+			//console.log(infront.lx);
+			
 			current.nx = infront.lx;
 			current.ny = infront.ly;
 
@@ -120,6 +116,15 @@ function Snake(){
 			current.x = current.nx
 			current.y = current.ny
 		}
-		
+		//SNAKE GROWING 
+		this.grow = function(position){
+				// difference between current and infront. run after snake updated movement.
+				
+				let x = this.parts[this.parts.length-1].x;
+				let y = this.parts[this.parts.length-1].y;
+
+				let part = new Part(x,y,10,10);
+				this.parts.push(part);
+		}
 	}
 }
