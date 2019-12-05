@@ -24,6 +24,8 @@ function Game(){// defines the game
 		s.initiate();
 		this.entities.push(s);
 
+
+
 		window.requestAnimationFrame(this.update.bind(this));
 	}
 	this.update = function(){
@@ -39,21 +41,32 @@ function Game(){// defines the game
 		if(this.time%5==0){
 			snake.update_body();
 		}
+		if(this.time%1==0){
+			food.generate();
+		}
 		
-		food.generate();
 
-		//if(d.colliding(snake.parts[0],snake.parts[3])==true){
+		//SNAKE KILL ITSELF..
+		//if(d.colliding(snake.parts[0],snake.parts[2])==true){
 		//	alert("collission");
 		//}
+		for(x=1;x<=this.entities.length-1;x++){
+			if(d.colliding(snake.parts[0],this.entities[x])){
+				
+				this.entities.splice(x,1);
+				
+				snake.grow();// Make snake increase in size.
 
-
+			}
+			// RENDER ALL FOOD and entities apart from SNAKE
+		}
 		
 
-		console.log (this.entities.length);
+		//console.log (this.entities.length);
 
 		for(x=1;x<=this.entities.length-1;x++){
 			renderer.draw_rect(this.entities[x]);
-			// RENDER ALL FOOD
+			// RENDER ALL FOOD and entities apart from SNAKE
 		}
 
 		renderer.render(snake);

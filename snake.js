@@ -91,8 +91,9 @@ function Snake(){
 			infront.lx = infront.x;
 			infront.ly = infront.y;
 
-			console.log(current.lx);
-			console.log(infront.lx);
+			//console.log(current.lx);
+			//console.log(infront.lx);
+			
 			current.nx = infront.lx;
 			current.ny = infront.ly;
 
@@ -115,6 +116,15 @@ function Snake(){
 			current.x = current.nx
 			current.y = current.ny
 		}
-		
+		//SNAKE GROWING 
+		this.grow = function(position){
+				// difference between current and infront. run after snake updated movement.
+				
+				let x = this.parts[this.parts.length-1].x;
+				let y = this.parts[this.parts.length-1].y;
+
+				let part = new Part(x,y,10,10);
+				this.parts.push(part);
+		}
 	}
 }
