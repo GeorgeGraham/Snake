@@ -23,7 +23,7 @@ function Game(){// defines the game
 		let s = new Snake();
 		s.initiate();
 		this.entities.push(s);
-
+		food.generate();
 
 
 		window.requestAnimationFrame(this.update.bind(this));
@@ -42,22 +42,25 @@ function Game(){// defines the game
 			snake.update_body();
 
 		}
-		if(this.time%30==0){
-			food.generate();
-		}
+		//if(this.time%30==0){
+		//	food.generate();
+		//}
 		
 
 		//SNAKE KILL ITSELF..
 		//if(d.colliding(snake.parts[0],snake.parts[2])==true){
 		//	alert("collission");
 		//}
+		
+
+
 		for(x=1;x<=this.entities.length-1;x++){
 			if(d.colliding(snake.parts[0],this.entities[x])){
 				
 				this.entities.splice(x,1);
 				
 				snake.grow();// Make snake increase in size.
-
+				food.generate();
 			}
 			// RENDER ALL FOOD and entities apart from SNAKE
 		}
