@@ -39,14 +39,14 @@ function Snake(){
 	this.head = this.parts[0] || "undefined";
 
 	this.direction = "up";
-
+	this.size = 30;
 
 	this.initiate = function(){
-		let p1 = new Part(100,100,40,40);
-		let p2 = new Part(100,110,40,40);
+		let p1 = new Part(this.size*3,this.size*3,this.size,this.size);
+		let p2 = new Part(this.size*3,(this.size*3)+this.size,this.size,this.size);
 
 		// TEST
-		let p3 = new Part(100,120,40,40);
+		let p3 = new Part(this.size*3,(this.size*3)+this.size*2,this.size,this.size);
 
 
 		this.parts.push(p1);
@@ -99,16 +99,16 @@ function Snake(){
 
 		}
 		if(this.direction=="up"){
-			this.head.y -= 40;
+			this.head.y -= this.size;
 		}
 		if(this.direction=="left"){
-			this.head.x-=40;
+			this.head.x-=this.size;
 		}
 		if(this.direction=="right"){
-			this.head.x+=40;
+			this.head.x+=this.size;
 		}
 		if(this.direction=="down"){
-			this.head.y+=40;
+			this.head.y+=this.size;
 		}
 		for(x=1;x<this.parts.length;x++){
 
@@ -123,7 +123,7 @@ function Snake(){
 				let x = this.parts[this.parts.length-1].x;
 				let y = this.parts[this.parts.length-1].y;
 
-				let part = new Part(x,y,40,40);
+				let part = new Part(x,y,this.size,this.size);
 				this.parts.push(part);
 		}
 	}
