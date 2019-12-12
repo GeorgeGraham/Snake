@@ -34,6 +34,16 @@ function Game(){// defines the game
 
 		renderer.clear_screen();
 
+		this.back = new Back();
+		renderer.draw_rect(this.back);
+
+
+		//DRAW BACKGROND
+
+
+
+
+
 		//DO THINGS
 
 		let snake = this.entities[0];

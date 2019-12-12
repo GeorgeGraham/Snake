@@ -1,5 +1,15 @@
 
+function Back(){
 
+	// Food for snake game
+
+	this.x=0;
+	this.y=0;
+	this.width=600;
+	this.height=600;
+	this.colour = "Black";
+	
+}
 
 function Food(ix,iy){
 
