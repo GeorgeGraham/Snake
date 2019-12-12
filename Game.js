@@ -55,7 +55,14 @@ function Game(){// defines the game
 		//if(this.time%30==0){
 		//	food.generate();
 		//}
-		
+
+		if(this.entities.length<2){
+			food.generate();
+			//alert(this.entities);
+		}
+		if(this.entities.length>2){
+			alert(this.entities);
+		}
 
 		//SNAKE KILL ITSELF..
 		//if(d.colliding(snake.parts[0],snake.parts[2])==true){
@@ -75,13 +82,7 @@ function Game(){// defines the game
 			// RENDER ALL FOOD and entities apart from SNAKE
 		}
 
-		if(this.entities.length<2){
-			food.generate();
-			//alert(this.entities);
-		}
-		if(this.entities.length>2){
-			alert(this.entities);
-		}
+		
 		//console.log (this.entities.length);
 
 		for(x=1;x<=this.entities.length-1;x++){
@@ -99,7 +100,7 @@ function Game(){// defines the game
 
 
 document.addEventListener("keydown",function(e){
-	console.log("key");
+	//console.log("key");
 	game.entities[0].move(e);
 
 });

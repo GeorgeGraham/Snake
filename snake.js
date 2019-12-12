@@ -56,7 +56,7 @@ function Snake(){
 
 	}
 	this.move = function(event){
-		console.log("Move");
+		//console.log("Move");
 		if(event.code=="KeyS"){
 			this.direction="down";
 		}
@@ -73,7 +73,7 @@ function Snake(){
 	
 	this.update_body = function(){
 		// for all body parts , make sure they move towards the next "linked" part.
-		console.log("update body")
+		//console.log("update body")
 
 		this.head = this.parts[0] || "undefined";
 
