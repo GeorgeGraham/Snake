@@ -38,10 +38,11 @@ function Game(){// defines the game
 
 		let snake = this.entities[0];
 
-		if(this.time%2==0){
+		if(this.time%3==0){
 			snake.update_body();
+
 		}
-		if(this.time%5==0){
+		if(this.time%30==0){
 			food.generate();
 		}
 		
