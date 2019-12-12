@@ -70,12 +70,18 @@ function Game(){// defines the game
 				this.entities.splice(x,1);
 				
 				snake.grow();// Make snake increase in size.
-				food.generate();
+				
 			}
 			// RENDER ALL FOOD and entities apart from SNAKE
 		}
-		
 
+		if(this.entities.length<2){
+			food.generate();
+			//alert(this.entities);
+		}
+		if(this.entities.length>2){
+			alert(this.entities);
+		}
 		//console.log (this.entities.length);
 
 		for(x=1;x<=this.entities.length-1;x++){
