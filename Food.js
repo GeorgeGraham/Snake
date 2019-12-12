@@ -7,8 +7,8 @@ function Food(ix,iy){
 
 	this.x=ix;
 	this.y=iy;
-	this.width=10;
-	this.height=10;
+	this.width=40;
+	this.height=40;
 	this.colour = "Red";
 
 }
@@ -19,8 +19,8 @@ function Foodgen(){
 		//RANDOMLY PLACE FOOD IN CANVAS
 		//console.log(Math.round(number / 10) * 10);
 
-		let x = Math.round(Math.floor((Math.random()*canvas.width-1)-1)/10)*10;
-		let y = Math.round(Math.floor((Math.random()*canvas.height-1)-1)/10)*10;
+		let x = Math.round(Math.floor((Math.random()*canvas.width-1)-1)/40)*40;
+		let y = Math.round(Math.floor((Math.random()*canvas.height-1)-1)/40)*40;
 		
 		let f = new Food(x,y);
 

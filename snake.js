@@ -42,11 +42,11 @@ function Snake(){
 
 
 	this.initiate = function(){
-		let p1 = new Part(100,100,10,10);
-		let p2 = new Part(100,110,10,10);
+		let p1 = new Part(100,100,40,40);
+		let p2 = new Part(100,110,40,40);
 
 		// TEST
-		let p3 = new Part(100,120,10,10);
+		let p3 = new Part(100,120,40,40);
 
 
 		this.parts.push(p1);
@@ -99,16 +99,16 @@ function Snake(){
 
 		}
 		if(this.direction=="up"){
-			this.head.y -= 10;
+			this.head.y -= 40;
 		}
 		if(this.direction=="left"){
-			this.head.x-=10;
+			this.head.x-=40;
 		}
 		if(this.direction=="right"){
-			this.head.x+=10;
+			this.head.x+=40;
 		}
 		if(this.direction=="down"){
-			this.head.y+=10;
+			this.head.y+=40;
 		}
 		for(x=1;x<this.parts.length;x++){
 
@@ -123,7 +123,7 @@ function Snake(){
 				let x = this.parts[this.parts.length-1].x;
 				let y = this.parts[this.parts.length-1].y;
 
-				let part = new Part(x,y,10,10);
+				let part = new Part(x,y,40,40);
 				this.parts.push(part);
 		}
 	}
