@@ -28,11 +28,11 @@ function Foodgen(){
 	this.generate = function(){
 		
 		//RANDOMLY PLACE FOOD IN CANVAS
-		//console.log(Math.round(number / 10) * 10); //SIZE FFS FIX IDIOT
 
-		let x = Math.round(Math.floor((Math.random()*canvas.width-1)-1)/30)*30;
-		let y = Math.round(Math.floor((Math.random()*canvas.height-1)-1)/30)*30;
-		
+		let x = Math.round(Math.floor((Math.random()*canvas.width-1)/30))*30;
+		let y = Math.round(Math.floor((Math.random()*canvas.height+1)/30))*30;
+		console.log("X",x);
+		console.log("Y",y);
 		let f = new Food(x,y);
 
 		game.entities.push(f);

@@ -66,8 +66,6 @@ function Game(){// defines the game
 			//////////////////////////////////////////////////////
 
 
-			
-
 			// Collision Checks//////////////////////////////////////
 			if(snake.parts[0].x >= renderer.cw || snake.parts[0].x <= 0-snake.parts[0].width){
 				// snake has died run reset code.
