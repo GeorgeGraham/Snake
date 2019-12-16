@@ -14,6 +14,8 @@ function Game(){// defines the game
 
 	this.entities = [];
 
+	this.started = false; // ONLY WHEN KEY PRESSED START GAME , could be used for pause
+
 	this.start = function(){
 		
 
@@ -31,6 +33,7 @@ function Game(){// defines the game
 	this.update = function(){
 		console.log("update");
 		this.time++;
+		
 
 		renderer.clear_screen();
 
@@ -70,8 +73,7 @@ function Game(){// defines the game
 		//}
 		
 
-		// Collision Checks
-
+		// Collision Checks//////////////////////////////////////
 		for(x=1;x<=this.entities.length-1;x++){
 			if(d.colliding(snake.parts[0],this.entities[x])){
 				
@@ -83,16 +85,21 @@ function Game(){// defines the game
 			// RENDER ALL FOOD and entities apart from SNAKE
 		}
 
-		
-		for(x=1;x<=snake.parts.length;x++){
+
+		for(x=1;x<snake.parts.length;x++){
 			if(d.colliding(snake.parts[0],snake.parts[x])){
 				// IF COLLIDING REMOVE SNAKE
-				snake.splice(x,snake.length-x);
+				snake.parts = [];
+
+				snake.initiate();
+
+				//snake.parts.splice(1,snake.parts.length-2);
+
 				
 			}
 			
 		}
-
+		/////////////////////////////////////////////////
 
 
 		
