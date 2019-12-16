@@ -46,7 +46,7 @@ function Game(){// defines the game
 
 		if(this.started == true){
 			
-			var audio = new Audio('Music.mp3');
+			var audio = new Audio("Music.mp3");
 			audio.play();
 
 
