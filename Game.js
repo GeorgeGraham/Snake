@@ -70,6 +70,7 @@ function Game(){// defines the game
 		//}
 		
 
+		// Collision Checks
 
 		for(x=1;x<=this.entities.length-1;x++){
 			if(d.colliding(snake.parts[0],this.entities[x])){
@@ -81,6 +82,18 @@ function Game(){// defines the game
 			}
 			// RENDER ALL FOOD and entities apart from SNAKE
 		}
+
+		
+		for(x=1;x<=snake.parts.length;x++){
+			if(d.colliding(snake.parts[0],snake.parts[x])){
+				// IF COLLIDING REMOVE SNAKE
+				snake.splice(x,snake.length-x);
+				
+			}
+			
+		}
+
+
 
 		
 		//console.log (this.entities.length);
