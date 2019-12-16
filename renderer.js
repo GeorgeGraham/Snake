@@ -21,4 +21,9 @@ function Renderer(){
 			this.draw_rect(object.parts[i]);
 		}
 	}
+	this.draw_text = function(x,y){
+		context.font = "30px Arial";
+		context.fillStyle = "Yellow";
+		context.fillText("Hello World", x, y);
+	}
 }

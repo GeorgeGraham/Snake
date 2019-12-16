@@ -18,6 +18,7 @@ function Game(){// defines the game
 
 	this.music = false; // FOR MUSIC PLAYBACK 
 
+	this.score = 0; // SCORE ;)
 
 	this.start = function(){
 		
@@ -38,6 +39,7 @@ function Game(){// defines the game
 		this.time++;
 		
 		renderer.clear_screen();
+
 
 		this.back = new Back();
 		renderer.draw_rect(this.back);
@@ -124,10 +126,10 @@ function Game(){// defines the game
 		for(x=1;x<=this.entities.length-1;x++){
 				renderer.draw_rect(this.entities[x]);
 				// RENDER ALL FOOD and entities apart from SNAKE
-			}
+		}
 
-			renderer.render(snake);
-
+		renderer.render(snake);
+		renderer.draw_text(this.score);
 
 		window.requestAnimationFrame(this.update.bind(this));
 		
