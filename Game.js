@@ -78,12 +78,14 @@ function Game(){// defines the game
 				snake.parts = [];
 				snake.initiate();
 				this.started = false;
+				this.score = 0;
 			}
 			if(snake.parts[0].y >= renderer.ch || snake.parts[0].y <= 0-snake.parts[0].height){
 				// snake has died run reset code.
 				snake.parts = [];
 				snake.initiate();
 				this.started = false;
+				this.score = 0;
 			}
 
 
@@ -94,7 +96,7 @@ function Game(){// defines the game
 					this.entities.splice(x,1);
 					
 					snake.grow();// Make snake increase in size.
-					
+					this.score += 100
 				}
 				// RENDER ALL FOOD and entities apart from SNAKE
 			}
@@ -106,6 +108,7 @@ function Game(){// defines the game
 					snake.parts = [];
 					snake.initiate();
 					this.started = false;
+					this.score = 0;
 
 					//snake.parts.splice(1,snake.parts.length-2);
 
@@ -129,7 +132,7 @@ function Game(){// defines the game
 		}
 
 		renderer.render(snake);
-		renderer.draw_text(this.score);
+		renderer.draw_text(this.score,10,30);
 
 		window.requestAnimationFrame(this.update.bind(this));
 		
