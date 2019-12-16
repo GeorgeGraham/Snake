@@ -14,7 +14,10 @@ function Game(){// defines the game
 
 	this.entities = [];
 
-	this.started = false; // ONLY WHEN KEY PRESSED START GAME , could be used for pause
+	this.started = false; // ONLY WHEN KEY PRESSED START GAME , could be used for pause and reset
+
+	this.music = false; // FOR MUSIC PLAYBACK 
+
 
 	this.start = function(){
 		
@@ -132,9 +135,10 @@ function Game(){// defines the game
 	this.key_handler = function(e){
 		// take key input if run , start game.
 
-		if(this.started == false){
+		if(this.music == false){
 			var audio = new Audio("Music.mp3");
 			audio.play();
+			this.music = true;
 		}
 		
 		this.started = true;
