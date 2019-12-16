@@ -18,7 +18,8 @@ function Game(){// defines the game
 
 	this.start = function(){
 		
-
+		var audio = new Audio('https://youtu.be/W6iBTxdR-DI');
+		audio.play();
 		
 		console.log(food);
 		//INITIATE SNAKE OBJECT , ADD TO GAME
