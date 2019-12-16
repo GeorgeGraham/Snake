@@ -56,6 +56,7 @@ function Snake(){
 
 	}
 	this.move = function(event){
+
 		//console.log("Move");
 		if(event.code=="KeyS"){
 			this.direction="down";
@@ -69,6 +70,7 @@ function Snake(){
 		if(event.code=="KeyW"){
 			this.direction="up";
 		}
+		
 	}
 	
 	this.update_body = function(){

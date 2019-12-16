@@ -34,22 +34,21 @@ function Game(){// defines the game
 		console.log("update");
 		this.time++;
 		
+		renderer.clear_screen();
+
+		this.back = new Back();
+		renderer.draw_rect(this.back);
+
+		//DRAW BACKGROND
+		let snake = this.entities[0];
+
+		
+
 		if(this.started == true){
-			renderer.clear_screen();
-
-			this.back = new Back();
-			renderer.draw_rect(this.back);
+			
 
 
-			//DRAW BACKGROND
-
-
-
-
-
-			//DO THINGS
-
-			let snake = this.entities[0];
+			//DO THINGS , Generate food and update snake movement.
 
 			if(this.time%5==0){
 				snake.update_body();
@@ -64,6 +63,9 @@ function Game(){// defines the game
 				console.log("FOOD ERROR");
 			}
 
+			//////////////////////////////////////////////////////
+
+			
 			
 
 			// Collision Checks//////////////////////////////////////
@@ -86,6 +88,8 @@ function Game(){// defines the game
 
 					snake.initiate();
 
+					this.started = false;
+
 					//snake.parts.splice(1,snake.parts.length-2);
 
 					
@@ -98,25 +102,33 @@ function Game(){// defines the game
 			
 			//console.log (this.entities.length);
 
-			for(x=1;x<=this.entities.length-1;x++){
+			
+
+		}
+
+		for(x=1;x<=this.entities.length-1;x++){
 				renderer.draw_rect(this.entities[x]);
 				// RENDER ALL FOOD and entities apart from SNAKE
 			}
 
 			renderer.render(snake);
 
-		}
-		
-
 
 		window.requestAnimationFrame(this.update.bind(this));
 		
 	}
+	this.key_handler = function(e){
+		// take key input if run , start game.
+		this.started = true;
+
+	}
+
 }
 
 
 document.addEventListener("keydown",function(e){
 	//console.log("key");
 	game.entities[0].move(e);
+	game.key_handler(e);
 
 });
