@@ -65,10 +65,25 @@ function Game(){// defines the game
 
 			//////////////////////////////////////////////////////
 
-			
+
 			
 
 			// Collision Checks//////////////////////////////////////
+			if(snake.parts[0].x >= renderer.cw || snake.parts[0].x <= 0-snake.parts[0].width){
+				// snake has died run reset code.
+				snake.parts = [];
+				snake.initiate();
+				this.started = false;
+			}
+			if(snake.parts[0].y >= renderer.ch || snake.parts[0].y <= 0-snake.parts[0].height){
+				// snake has died run reset code.
+				snake.parts = [];
+				snake.initiate();
+				this.started = false;
+			}
+
+
+
 			for(x=1;x<=this.entities.length-1;x++){
 				if(d.colliding(snake.parts[0],this.entities[x])){
 					
@@ -85,9 +100,7 @@ function Game(){// defines the game
 				if(d.colliding(snake.parts[0],snake.parts[x])){
 					// IF COLLIDING REMOVE SNAKE
 					snake.parts = [];
-
 					snake.initiate();
-
 					this.started = false;
 
 					//snake.parts.splice(1,snake.parts.length-2);

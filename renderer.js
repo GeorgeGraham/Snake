@@ -3,6 +3,10 @@ var context = canvas.getContext("2d");
 
 
 function Renderer(){
+
+	this.cw = canvas.width;
+	this.ch = canvas.height; // FOR NOW HAVE THESE ON THIS OBJECT
+
 	this.draw_rect = function(object){
 		context.beginPath();
 		context.fillStyle = object.colour;
