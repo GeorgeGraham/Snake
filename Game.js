@@ -131,7 +131,16 @@ function Game(){// defines the game
 	}
 	this.key_handler = function(e){
 		// take key input if run , start game.
+
+		if(this.started == false){
+			var audio = new Audio("Music.mp3");
+			audio.play();
+		}
+		
 		this.started = true;
+
+		
+		
 
 	}
 
