@@ -26,7 +26,7 @@ function Game(){// defines the game
 		s.initiate();
 		this.entities.push(s);
 		food.generate();
-
+		
 
 		window.requestAnimationFrame(this.update.bind(this));
 	}
@@ -46,8 +46,7 @@ function Game(){// defines the game
 
 		if(this.started == true){
 			
-			var audio = new Audio("Music.mp3");
-			audio.play();
+			
 
 
 			//DO THINGS , Generate food and update snake movement.
