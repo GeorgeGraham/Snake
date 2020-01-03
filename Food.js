@@ -41,10 +41,11 @@ function Foodgen(){
 		var check = false;
 
 		for(a=0;a<=game.entities[0].parts.length-1;a++){
-			if(d.colliding(f,game.entities[0].parts[a])){
+			if(d.colliding(generated,game.entities[a])){
 				check = true;
 			}
 		}
+
 		if(check !==false){
 			this.generate();
 		}else{
